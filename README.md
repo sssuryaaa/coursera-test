@@ -1,2 +1,3 @@
 # coursera-test
-coursera test repository
+JavaScript Task Assignment
+by S Surya Prakash

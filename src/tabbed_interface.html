@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tab Layout</title>
+	<style>
+		.tab {
+  			border: 1px solid #ccc;
+		}
+
+		.tab button{
+  			cursor: pointer;
+  			padding: 14px 16px;
+  			font-size: 17px;
+		}
+		.tab button.active {
+  			background-color: blue;
+		}
+		.tabcontent {
+  			display: none;
+  			padding: 6px 12px;
+  			border: 1px solid #ccc;
+  			border-top: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="tab">
+  		<button class="tablinks" onclick="fun(event,'first')">First</button>
+
+  		<button class="tablinks" onclick="fun(event,'second')">Second</button>
+
+  		<button class="tablinks" onclick="fun(event,'third')">Third</button>
+  	</div>
+
+  		<div id="first" class="tabcontent">
+  			<p>contents of first tab</p>
+  			<p>
+  				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  			</p>
+		</div>
+
+		<div id="second" class="tabcontent">
+
+ 			<p>contents of second tab</p> 
+ 			<p>
+ 				Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular
+ 			</p>
+		</div>
+
+		<div id="third" class="tabcontent">
+  			<p>contents of third tab</p>
+  			<p>
+  				It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+  			</p>
+		</div>
+
+		<script>
+			function fun(event,idname) {
+  				var tabcontent = document.getElementsByClassName("tabcontent");
+  				for (let i = 0; i < tabcontent.length; i++) {
+    				tabcontent[i].style.display = "none";
+  				}
+  				var tabs = document.getElementsByClassName("tablinks");
+  				for (let i = 0; i < tabs.length; i++) {
+    				tabs[i].className = tabs[i].className.replace(" active", "");
+  				}
+  				document.getElementById(idname).style.display = "block";
+  				event.currentTarget.className += " active";
+			}
+</script>
+	
+
+</body>
+</html>
